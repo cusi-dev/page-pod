@@ -1,7 +1,7 @@
 {
   "name": "page-pod",
   "version": "0.1.0",
-  "description": "Pagination element for Aurelia",
+  "description": "Page Pod is an Aurelia custom element for pagination",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,14 @@
   ],
   "author": "Josh Graham <jgraham@gmail.com> (http://www.joshgraham.com)",
   "license": "MIT",
+  "homepage": "https://github.com/cusi-dev/page-pod",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cusi-dev/page-pod.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/cusi-dev/page-pod/issues"
+  }
   "devDependencies": {
     "del": "^2.0.2",
     "gulp": "^3.9.0",
