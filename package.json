@@ -1,6 +1,6 @@
 {
   "name": "page-pod",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Page Pod is an Aurelia custom element for pagination",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
