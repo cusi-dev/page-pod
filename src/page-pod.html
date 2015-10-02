@@ -33,12 +33,12 @@
     <div class="visible-xs">
       <ul class="pager">
         <big>
-          <li if.bind="nextPageRoute">
+          <li if.bind="prevPageRoute">
             <a href.bind="prevPageRoute"><i class="fa fa-arrow-circle-left"></i> Previous</a>
           </li>
         </big>
         <big>
-          <li if.bind="prevPageRoute">
+          <li if.bind="nextPageRoute">
             <a href.bind="nextPageRoute">Next <i class="fa fa-arrow-circle-right"></i></a>
           </li>
         </big>
