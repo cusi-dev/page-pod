@@ -3,6 +3,7 @@ var babel = require("gulp-babel");
 var del = require("del");
 var gulp = require("gulp");
 var runSequence = require("run-sequence");
+var vinylPaths = require('vinyl-paths');
 
 var babelOptions = {
   moduleIds: false,
@@ -15,8 +16,9 @@ var babelOptions = {
   ]
 };
 
-gulp.task("clean", function(callback) {
-  del(["dist/**/*"], callback);
+gulp.task('clean', function() {
+  return gulp.src("dist/**/*")
+    .pipe(vinylPaths(del));
 });
 
 gulp.task("build-html", function() {
