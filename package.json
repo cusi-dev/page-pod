@@ -17,8 +17,8 @@
     "url": "https://github.com/cusi-dev/page-pod.git"
   },
   "bugs": {
-    "url" : "https://github.com/cusi-dev/page-pod/issues"
-  }
+    "url": "https://github.com/cusi-dev/page-pod/issues"
+  },
   "devDependencies": {
     "del": "^2.0.2",
     "gulp": "^3.9.0",
