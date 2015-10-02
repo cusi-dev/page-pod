@@ -1,0 +1,48 @@
+<template>
+  <nav>
+    <div class="text-center">
+      <div class="hidden-xs">
+        <ul class="pagination">
+          <li if.bind="firstPageRoute">
+            <a href.bind="firstPageRoute" aria-label="First">
+              <i class="fa fa-angle-double-left"></i>
+            </a>
+          </li>
+          <li if.bind="prevPageRoute">
+            <a href.bind="prevPageRoute" aria-label="Previous">
+              <i class="fa fa-angle-left"></i>
+            </a>
+          </li>
+          <li repeat.for="page of pageOptions"
+            class="${page.number == $parent.currentPageNumber ? 'active' : ''}">
+            <a href.bind="page.route">${page.number}</a>
+          </li>
+          <li if.bind="nextPageRoute">
+            <a href.bind="nextPageRoute" aria-label="Next">
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </li>
+          <li if.bind="lastPageRoute">
+            <a href.bind="lastPageRoute" aria-label="Last">
+              <i class="fa fa-angle-double-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="visible-xs">
+      <ul class="pager">
+        <big>
+          <li if.bind="nextPageRoute">
+            <a href.bind="prevPageRoute"><i class="fa fa-arrow-circle-left"></i> Previous</a>
+          </li>
+        </big>
+        <big>
+          <li if.bind="prevPageRoute">
+            <a href.bind="nextPageRoute">Next <i class="fa fa-arrow-circle-right"></i></a>
+          </li>
+        </big>
+      </ul>
+    </div>
+  </nav>
+</template>
