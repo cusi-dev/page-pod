@@ -21,12 +21,16 @@
   },
   "main": "dist/commonjs/index.js",
   "devDependencies": {
+    "conventional-changelog": "^0.5.0",
     "del": "^2.0.2",
+    "fs": "0.0.2",
     "gulp": "^3.9.0",
     "gulp-babel": "^5.2.1",
+    "gulp-bump": "^1.0.0",
     "object.assign": "^4.0.1",
     "run-sequence": "^1.1.4",
-    "vinyl-paths": "^2.0.0"
+    "vinyl-paths": "^2.0.0",
+    "yargs": "^3.26.0"
   },
   "jspm": {
     "main": "index",

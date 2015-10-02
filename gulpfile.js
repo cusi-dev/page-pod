@@ -1,9 +1,13 @@
-var assign = Object.assign || require('object.assign');
+var assign = Object.assign || require("object.assign");
 var babel = require("gulp-babel");
+var bump = require("gulp-bump");
+var changelog = require("conventional-changelog");
 var del = require("del");
+var fs = require("fs");
 var gulp = require("gulp");
 var runSequence = require("run-sequence");
-var vinylPaths = require('vinyl-paths');
+var yargs = require("yargs");
+var vinylPaths = require("vinyl-paths");
 
 var babelOptions = {
   moduleIds: false,
@@ -16,7 +20,15 @@ var babelOptions = {
   ]
 };
 
-gulp.task('clean', function() {
+var argv = yargs.argv;
+var validBumpTypes = "major|minor|patch|prerelease".split("|");
+var bumpType = (argv.bump || "patch").toLowerCase();
+
+if(validBumpTypes.indexOf(bumpType) === -1) {
+  throw new Error("Unrecognized bump '" + bumpType + "'.");
+}
+
+gulp.task("clean", function() {
   return gulp.src("dist/**/*")
     .pipe(vinylPaths(del));
 });
@@ -56,6 +68,33 @@ gulp.task("build", function(callback) {
   return runSequence(
     "clean",
     ["build-js-es6", "build-js-commonjs", "build-js-amd", "build-js-system", "build-html"],
+    callback
+  );
+});
+
+gulp.task("bump-version", function(){
+  return gulp.src("./package.json")
+    .pipe(bump({type: bumpType})) // major|minor|patch|prerelease
+    .pipe(gulp.dest("./"));
+});
+
+gulp.task("changelog", function() {
+  var pkg = JSON.parse(fs.readFileSync("./package.json", "utf-8"));
+  var changeLogOptions = {
+    repository: pkg.repository.url,
+    version: pkg.version,
+    releaseCount: 0
+  };
+
+  return changelog(changeLogOptions)
+    .pipe(fs.createWriteStream("CHANGELOG.md"));
+});
+
+gulp.task("prepare-release", function(callback){
+  return runSequence(
+    "build",
+    "bump-version",
+    "changelog",
     callback
   );
 });
