@@ -36,4 +36,7 @@ or if you are on a small display it will look like this:
 
 ![Page Pod Small](./img/small.png)
 
+Please [report bugs][issues] on GitHub.
+
 [aurelia]: http://aurelia.io/
+[issues]: https://github.com/cuis-dev/issues
