@@ -39,4 +39,4 @@ or if you are on a small display it will look like this:
 Please [report bugs][issues] on GitHub.
 
 [aurelia]: http://aurelia.io/
-[issues]: https://github.com/cuis-dev/page-pod/issues
+[issues]: https://github.com/cusi-dev/page-pod/issues
