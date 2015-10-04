@@ -1,6 +1,6 @@
 # Page Pod
 
-Page Pod is an [aurelia][Aurelia] custom element for handling the process of dividing your content into discrete pages. Pagination!
+Page Pod is an [Aurelia][aurelia] custom element for handling the process of dividing your content into discrete pages. Pagination!
 
 # Using the plugin
 
