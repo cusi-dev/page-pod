@@ -1,3 +1,18 @@
+<a name="0.2.1"></a>
+## 0.2.1 (2015-10-22)
+
+
+* Add export to fix bundle problem ([0e7902f](https://github.com/cusi-dev/page-pod/commit/0e7902f))
+* Merge pull request #3 from derekbjohnson/master ([7fdcede](https://github.com/cusi-dev/page-pod/commit/7fdcede))
+* Remove unnecessary indentation ([13fb99f](https://github.com/cusi-dev/page-pod/commit/13fb99f))
+* Update README.md ([399b256](https://github.com/cusi-dev/page-pod/commit/399b256))
+* Update README.md ([78faf1f](https://github.com/cusi-dev/page-pod/commit/78faf1f))
+* Update README.md ([957663e](https://github.com/cusi-dev/page-pod/commit/957663e))
+* Update README.md ([439f8b4](https://github.com/cusi-dev/page-pod/commit/439f8b4))
+* Update README.md ([9ddbd5d](https://github.com/cusi-dev/page-pod/commit/9ddbd5d))
+
+
+
 <a name="0.2.0"></a>
 # 0.2.0 (2015-10-02)
 
@@ -8,6 +23,7 @@
 
 * Add npm ignore file ([0da2891](https://github.com/cusi-dev/page-pod/commit/0da2891))
 * Merge pull request #2 from cusi-dev/button-disappear-bug ([65d8064](https://github.com/cusi-dev/page-pod/commit/65d8064)), closes [#1](https://github.com/cusi-dev/page-pod/issues/1)
+* Prepare release v0.2.0 ([76e2c19](https://github.com/cusi-dev/page-pod/commit/76e2c19))
 
 
 
