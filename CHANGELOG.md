@@ -1,8 +1,17 @@
+<a name="0.4.0"></a>
+# 0.4.0 (2015-10-22)
+
+
+* Remove assumption of default conventions ([5c435f7](https://github.com/cusi-dev/page-pod/commit/5c435f7)), closes [#4](https://github.com/cusi-dev/page-pod/issues/4)
+
+
+
 <a name="0.3.0"></a>
 # 0.3.0 (2015-10-22)
 
 
 * Fix bundle issue where decorators were undefined ([cd70c19](https://github.com/cusi-dev/page-pod/commit/cd70c19))
+* Prepare release v0.3.0 ([4ca61a9](https://github.com/cusi-dev/page-pod/commit/4ca61a9))
 
 
 
