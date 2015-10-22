@@ -1,9 +1,18 @@
+<a name="0.3.0"></a>
+# 0.3.0 (2015-10-22)
+
+
+* Fix bundle issue where decorators were undefined ([cd70c19](https://github.com/cusi-dev/page-pod/commit/cd70c19))
+
+
+
 <a name="0.2.1"></a>
 ## 0.2.1 (2015-10-22)
 
 
 * Add export to fix bundle problem ([0e7902f](https://github.com/cusi-dev/page-pod/commit/0e7902f))
 * Merge pull request #3 from derekbjohnson/master ([7fdcede](https://github.com/cusi-dev/page-pod/commit/7fdcede))
+* Prepare release v0.2.1 ([08e7fac](https://github.com/cusi-dev/page-pod/commit/08e7fac))
 * Remove unnecessary indentation ([13fb99f](https://github.com/cusi-dev/page-pod/commit/13fb99f))
 * Update README.md ([399b256](https://github.com/cusi-dev/page-pod/commit/399b256))
 * Update README.md ([78faf1f](https://github.com/cusi-dev/page-pod/commit/78faf1f))
