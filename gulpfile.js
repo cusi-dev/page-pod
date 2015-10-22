@@ -1,5 +1,6 @@
 var assign = Object.assign || require("object.assign");
 var babel = require("gulp-babel");
+var browserSync = require("browser-sync");
 var bump = require("gulp-bump");
 var changelog = require("conventional-changelog");
 var del = require("del");
@@ -64,10 +65,18 @@ gulp.task("build-js-system", function() {
     .pipe(gulp.dest("dist/system"))
 });
 
+gulp.task("build-styles", function() {
+  return gulp.src("styles/bootstrap.css")
+    .pipe(gulp.dest("dist/es6"))
+    .pipe(gulp.dest("dist/commonjs"))
+    .pipe(gulp.dest("dist/amd"))
+    .pipe(gulp.dest("dist/system"));
+});
+
 gulp.task("build", function(callback) {
   return runSequence(
     "clean",
-    ["build-js-es6", "build-js-commonjs", "build-js-amd", "build-js-system", "build-html"],
+    ["build-js-es6", "build-js-commonjs", "build-js-amd", "build-js-system", "build-html", "build-styles"],
     callback
   );
 });
@@ -97,4 +106,17 @@ gulp.task("prepare-release", function(callback){
     "changelog",
     callback
   );
+});
+
+gulp.task("serve", ["build"], function(done) {
+  var bs = browserSync.create("Sample server");
+
+  bs.init({
+    server: {
+      baseDir: "./sample",
+      routes: {
+        "/page-pod": "./dist/amd"
+      }
+    }
+  }, done);
 });

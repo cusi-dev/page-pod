@@ -9,10 +9,26 @@ export class PagePod {
   @bindable routeName;
 
   generateRouteForPage(pageNumber) {
+    console.log("gcats");
     return this.router.generate(this.routeName, { page: pageNumber });
   }
 
+  routerChanged() {
+    console.log("routerChanged", this.router);
+    this.buildPageLinks();
+  }
+
   currentPageNumberChanged() {
+    console.log("currentPageNumberChanged", this.currentPageNumber);
+    this.buildPageLinks();
+  }
+
+  buildPageLinks() {
+    if (!this.router || !this.currentPageNumber) {
+      console.log("no router or no currentPageNumber");
+      return;
+    }
+
     this.pageOptions = [];
     this.showFirstPageButton = true;
     this.showLastPageButton = true;
