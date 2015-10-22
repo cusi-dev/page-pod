@@ -1,5 +1,7 @@
-import { bindable } from "aurelia-framework";
+import { bindable, customElement, useView } from "aurelia-framework";
 
+@customElement("page-pod")
+@useView("./page-pod.html")
 export class PagePod {
   @bindable router;
   @bindable totalPages;
