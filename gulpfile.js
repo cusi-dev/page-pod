@@ -30,7 +30,7 @@ if(validBumpTypes.indexOf(bumpType) === -1) {
 }
 
 gulp.task("clean", function() {
-  return gulp.src("dist/**/*")
+  return gulp.src("dist")
     .pipe(vinylPaths(del));
 });
 
@@ -109,9 +109,9 @@ gulp.task("prepare-release", function(callback){
 });
 
 gulp.task("serve", ["build"], function(done) {
-  var bs = browserSync.create("Sample server");
-
-  bs.init({
+  browserSync({
+    online: false,
+    open: false,
     server: {
       baseDir: "./sample",
       routes: {
@@ -119,4 +119,13 @@ gulp.task("serve", ["build"], function(done) {
       }
     }
   }, done);
+});
+
+function reportChange(event) {
+  console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+}
+
+gulp.task('watch', ['serve'], function() {
+  gulp.watch('./src/**/*.*', ['build', browserSync.reload]).on('change', reportChange);
+  gulp.watch('./styles/**/*.*', ['build', browserSync.reload]).on('change', reportChange);
 });
