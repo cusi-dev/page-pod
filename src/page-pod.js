@@ -42,6 +42,10 @@ export class PagePod {
       upperBound = this.totalPages;
     }
 
+    if (lowerBound < 1) {
+      lowerBound = 1;
+    }
+
     for (let pageNumber = lowerBound; pageNumber <= upperBound; pageNumber++) {
       this.pageOptions.push({
         number: pageNumber,
