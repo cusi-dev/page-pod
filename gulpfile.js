@@ -128,4 +128,5 @@ function reportChange(event) {
 gulp.task('watch', ['serve'], function() {
   gulp.watch('./src/**/*.*', ['build', browserSync.reload]).on('change', reportChange);
   gulp.watch('./styles/**/*.*', ['build', browserSync.reload]).on('change', reportChange);
+  gulp.watch('./sample/**/*.*', ['build', browserSync.reload]).on('change', reportChange);
 });
