@@ -49,7 +49,7 @@ export class PagePod {
     for (let pageNumber = lowerBound; pageNumber <= upperBound; pageNumber++) {
       this.pageOptions.push({
         number: pageNumber,
-        route: this.generateRouteForPage(pageNumber),
+        route: this.generateRouteForPage(pageNumber)
       });
     }
 

@@ -133,7 +133,7 @@ gulp.task('watch', ['serve'], function() {
 });
 
 gulp.task('lint', function() {
-  return gulp.src('./src/**/*.*')
+  return gulp.src(['./src/**/*.js', './sample/src/**/*.js'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
