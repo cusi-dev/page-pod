@@ -4,6 +4,7 @@ var browserSync = require("browser-sync");
 var bump = require("gulp-bump");
 var changelog = require("conventional-changelog");
 var del = require("del");
+var eslint = require('gulp-eslint');
 var fs = require("fs");
 var gulp = require("gulp");
 var runSequence = require("run-sequence");
@@ -129,4 +130,11 @@ gulp.task('watch', ['serve'], function() {
   gulp.watch('./src/**/*.*', ['build', browserSync.reload]).on('change', reportChange);
   gulp.watch('./styles/**/*.*', ['build', browserSync.reload]).on('change', reportChange);
   gulp.watch('./sample/**/*.*', ['build', browserSync.reload]).on('change', reportChange);
+});
+
+gulp.task('lint', function() {
+  return gulp.src('./src/**/*.*')
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failOnError());
 });
